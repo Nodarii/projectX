@@ -1,16 +1,28 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
+import {UserLinksComponent} from './user-links/user-links.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MdButtonModule, MdIconModule, MdSidenavModule, MdToolbarModule} from '@angular/material';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserLinksComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MdButtonModule,
+    MdToolbarModule,
+    MdIconModule,
+    MdSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
