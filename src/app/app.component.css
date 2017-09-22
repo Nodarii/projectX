@@ -6,3 +6,13 @@
 md-sidenav-container{
   height: 100%;
 }
+
+md-sidenav{
+  width: 300px;
+}
+
+.menu-title{
+  flex: 1;
+}
+
+

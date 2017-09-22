@@ -1,27 +1,25 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <md-sidenav-container class="example-container">
   <md-sidenav #sidenav class="example-sidenav">
-    Jolly good!
+    <md-toolbar>
+      <span class="menu-title">Main menu</span>
+      <button md-icon-button (click)="sidenav.close()"><md-icon>arrow_back</md-icon></button>
+    </md-toolbar>
+    <md-nav-list>
+      <a md-list-item routerLink="home" (click)="sidenav.close()">Home</a>
+      <a md-list-item routerLink="issues" (click)="sidenav.close()">Issues</a>
+    </md-nav-list>
   </md-sidenav>
   <md-toolbar>
     <button md-icon-button (click)="sidenav.open()"><md-icon>menu</md-icon></button>
     <span>Project X</span>
   </md-toolbar>
-  <div class="example-sidenav-content">
-  </div>
-  <div style="text-align:center">
-    <h1>
-      Welcome to {{title}}!
-    </h1>
-    <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-  </div>
-  <h2>Here are some links to help you start: </h2>
+  <h3 class="mat-h3">
+    It is main app-component title!
+  </h3>
 
-  <ul>
-    <li *ngFor="let issue of issues">{{issue.title}}</li>
-  </ul>
+  <router-outlet></router-outlet>
 
-  <app-user-links></app-user-links>
 
 </md-sidenav-container>
 

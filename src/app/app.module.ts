@@ -1,16 +1,21 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-
-import {AppComponent} from './app.component';
-import {UserLinksComponent} from './user-links/user-links.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MdButtonModule, MdIconModule, MdSidenavModule, MdToolbarModule} from '@angular/material';
-import {HttpClientModule} from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+import { UserLinksComponent } from './user-links/user-links.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdButtonModule, MdIconModule, MdListModule, MdSidenavModule, MdToolbarModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
+import { GithubService } from './shared/github.service';
+import { HomeComponent } from './home/home.component';
+import { IssuesComponent } from './issues/issues.component';
+import { AppRoutesModule } from './app-routes.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserLinksComponent
+    UserLinksComponent,
+    HomeComponent,
+    IssuesComponent
   ],
   imports: [
     BrowserModule,
@@ -19,9 +24,11 @@ import {HttpClientModule} from '@angular/common/http';
     MdButtonModule,
     MdToolbarModule,
     MdIconModule,
-    MdSidenavModule
+    MdSidenavModule,
+    MdListModule,
+    AppRoutesModule
   ],
-  providers: [],
+  providers: [GithubService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
