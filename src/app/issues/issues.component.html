@@ -1,11 +1,37 @@
-<ul>
-  <li *ngFor="let issue of issues">
-    <a href="{{issue.url}}">{{issue.title}}</a>
-  </li>
-  <li>
-    tables
-  </li>
-  <li>
-    theming
-  </li>
-</ul>
+<div class="table-container">
+  <div class="row">
+    <div class="item">
+      <button md-raised-button color="accent">
+        Re-fetch list
+      </button>
+    </div>
+    <div class="custom-circle">
+      <div class="circle">
+        !
+      </div>
+    </div>
+  </div>
+  <md-table #table [dataSource]="issuesDataSource">
+    <!-- ID Column -->
+    <ng-container mdColumnDef="title">
+      <md-header-cell *mdHeaderCellDef> Title </md-header-cell>
+      <md-cell *mdCellDef="let issue"> {{issue.title}} </md-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container mdColumnDef="state">
+      <md-header-cell *mdHeaderCellDef> State </md-header-cell>
+      <md-cell *mdCellDef="let issue"> {{issue.state}} </md-cell>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container mdColumnDef="user">
+      <md-header-cell *mdHeaderCellDef> Issue user </md-header-cell>
+      <md-cell *mdCellDef="let issue"> {{issue.user.login}} </md-cell>
+    </ng-container>
+
+    <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+    <md-row *mdRowDef="let issue; columns: displayedColumns;"></md-row>
+  </md-table>
+
+</div>

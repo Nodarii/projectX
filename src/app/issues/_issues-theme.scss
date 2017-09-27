@@ -1,0 +1,11 @@
+@import '~@angular/material/theming';
+
+@mixin issues-theme($theme) {
+  $primary: map_get($theme, primary);
+
+  .circle{
+    background: mat-color($primary, 700);
+    color: mat-contrast($primary, 700);
+    border-color: mat-contrast($primary, 700);
+  }
+}

@@ -10,17 +10,11 @@
       <a md-list-item routerLink="issues" (click)="sidenav.close()">Issues</a>
     </md-nav-list>
   </md-sidenav>
-  <md-toolbar>
+  <md-toolbar color="primary">
     <button md-icon-button (click)="sidenav.open()"><md-icon>menu</md-icon></button>
     <span>Project X</span>
   </md-toolbar>
-  <h3 class="mat-h3">
-    It is main app-component title!
-  </h3>
-
   <router-outlet></router-outlet>
-
-
 </md-sidenav-container>
 
 
